@@ -3,6 +3,7 @@ package ru.yandex.practicum;
 import java.io.PrintWriter;
 
 public class Logger {
+
     private final PrintWriter writer;
 
     public Logger(PrintWriter writer) {

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Юнит-тесты проекта Wordle")
 class WordleTest {
+
     private static List<String> testWords;
     private Logger logger;
     private WordleDictionary dictionary;

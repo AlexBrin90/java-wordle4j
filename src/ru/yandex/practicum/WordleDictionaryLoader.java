@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordleDictionaryLoader {
+
     static final String USER_DIC = System.getProperty("user.dir");
     private final Logger logger;
 

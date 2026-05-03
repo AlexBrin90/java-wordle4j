@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Wordle {
+
     private static final String LOG_FILE = "wordle_game.log";
     private static final String DICT_FILE = "words_ru.txt";
     private static final int MAX_STEPS = 6;

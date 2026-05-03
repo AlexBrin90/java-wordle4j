@@ -17,6 +17,7 @@ public class WordleGame {
     private final Map<Integer, Character> fixedPositions = new HashMap<>();
 
     public WordleGame(WordleDictionary dict, int steps, Logger logger) {
+
         this.dictionary = dict;
         this.steps = steps;
         this.logger = logger;

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 public class WordleDictionary {
+
     private static final Random RNG = new Random();
 
     List<String> words;
