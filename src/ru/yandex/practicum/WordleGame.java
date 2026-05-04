@@ -12,8 +12,8 @@ public class WordleGame {
     private final WordleDictionary dictionary;
     private final Logger logger;
     private final List<String> attempts = new ArrayList<>();
-    private final List<String> correctLetters = new ArrayList<>();
-    private final List<String> wrongLetters = new ArrayList<>();
+    private final List<Character> correctLetters = new ArrayList<>();
+    private final List<Character> wrongLetters = new ArrayList<>();
     private final Map<Integer, Character> fixedPositions = new HashMap<>();
 
     public WordleGame(WordleDictionary dict, int steps, Logger logger) {
@@ -83,7 +83,7 @@ public class WordleGame {
             if (g == a) {
                 res[i] = String.valueOf(g).toUpperCase();
                 remaining.put(g, remaining.get(g) - 1);
-                correctLetters.add(String.valueOf(g));
+                correctLetters.add(g);
                 fixedPositions.put(i, g);
             }
         }
@@ -96,7 +96,7 @@ public class WordleGame {
             if (remaining.containsKey(g) && remaining.get(g) > 0) {
                 res[i] = String.valueOf(g).toLowerCase();
                 remaining.put(g, remaining.get(g) - 1);
-                correctLetters.add(String.valueOf(g));
+                correctLetters.add(g);
             } else {
                 res[i] = "_";
                 boolean found = false;
@@ -107,7 +107,7 @@ public class WordleGame {
                     }
                 }
                 if (!found) {
-                    wrongLetters.add(String.valueOf(g));
+                    wrongLetters.add(g);
                 }
             }
         }
@@ -131,9 +131,9 @@ public class WordleGame {
         List<String> toRemove = new ArrayList<>();
         candidates.removeAll(attempts);
 
-        for (String b : wrongLetters) {
+        for (char b : wrongLetters) {
             for (String w : candidates) {
-                if (w.contains(b)) {
+                if (w.contains(String.valueOf(b))) {
                     toRemove.add(w);
                 }
             }
